@@ -19,14 +19,17 @@ ActiveRecord::Schema.define(version: 2020_02_10_160825) do
 
   create_table "tickets", force: :cascade do |t|
     t.string "title"
-    t.string "tracker"
-    t.string "external_id"
-    t.string "url"
-    t.string "statuses"
-    t.string "status"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.string "tracker", null: false
+    t.string "external_id", null: false
+    t.string "url", null: false
+    t.string "priority"
+    t.string "assignee"
+    t.integer "order_nr", null: false
+    t.integer "status_id", null: false
+    t.index ["order_nr"], name: "index_tickets_on_order_nr", unique: true
+    t.index ["status_id"], name: "index_tickets_on_status_id"
     t.index ["tracker", "external_id"], name: "external_id_index", unique: true
   end
 
+  add_foreign_key "tickets", "statuses"
 end
