@@ -1,0 +1,12 @@
+<h1>Tickets#index</h1>
+<p>Find me in app/views/tickets/index.html.erb</p>
+<table>
+    <% Ticket.all.each do |ticket| %>
+      <tr>
+          <td><%= ticket.order_nr %></td>
+          <td><%= ticket.title %></td>
+          <td><%= ticket.tracker %></td>
+          <td><%= ticket.external_id %></td>
+      </tr>
+    <% end %>
+</table>
