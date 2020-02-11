@@ -1,12 +1,9 @@
 <h1>Tickets#index</h1>
 <p>Find me in app/views/tickets/index.html.erb</p>
-<table>
+<ul id="tickets" class="sortable">
     <% Ticket.all.each do |ticket| %>
-      <tr>
-          <td><%= ticket.position %></td>
-          <td><%= ticket.title %></td>
-          <td><%= ticket.tracker %></td>
-          <td><%= ticket.external_id %></td>
-      </tr>
+        <li id="ticket" draggable="true"><%= ticket.external_id + " " + ticket.tracker %></li>
     <% end %>
-</table>
+</ul>
+
+<%= javascript_pack_tag 'tickets', 'data-turbolinks-track': 'reload' %>
