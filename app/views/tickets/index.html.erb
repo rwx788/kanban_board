@@ -3,7 +3,7 @@
 <table>
     <% Ticket.all.each do |ticket| %>
       <tr>
-          <td><%= ticket.order_nr %></td>
+          <td><%= ticket.position %></td>
           <td><%= ticket.title %></td>
           <td><%= ticket.tracker %></td>
           <td><%= ticket.external_id %></td>
