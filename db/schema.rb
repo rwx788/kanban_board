@@ -24,9 +24,9 @@ ActiveRecord::Schema.define(version: 2020_02_10_160825) do
     t.string "url", null: false
     t.string "priority"
     t.string "assignee"
-    t.integer "order_nr", null: false
+    t.integer "position", null: false
     t.integer "status_id", null: false
-    t.index ["order_nr"], name: "index_tickets_on_order_nr", unique: true
+    t.index ["position"], name: "index_tickets_on_position", unique: true
     t.index ["status_id"], name: "index_tickets_on_status_id"
     t.index ["tracker", "external_id"], name: "external_id_index", unique: true
   end

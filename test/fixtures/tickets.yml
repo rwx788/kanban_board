@@ -9,7 +9,7 @@ open_poo1:
   tracker: "progress"
   external_id: "45263"
   url: "https://progress.opensuse.org/issues/45263"
-  order_nr: 1
+  position: 1
   status: open
 #
 inprogress_poo1:
@@ -17,7 +17,7 @@ inprogress_poo1:
   tracker: "progress"
   external_id: "45264"
   url: "https://progress.opensuse.org/issues/45264"
-  order_nr: 2
+  position: 2
   status: in_progress
   assignee: me
 
@@ -26,6 +26,6 @@ inprogress_poo2:
   tracker: "progress"
   external_id: "45265"
   url: "https://progress.opensuse.org/issues/45265"
-  order_nr: 3
+  position: 3
   status: in_progress
   assignee: me
