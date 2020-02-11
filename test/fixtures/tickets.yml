@@ -4,8 +4,28 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
-# column: value
+open_poo1:
+  title: "Test ticket"
+  tracker: "progress"
+  external_id: "45263"
+  url: "https://progress.opensuse.org/issues/45263"
+  order_nr: 1
+  status: open
 #
-two: {}
-# column: value
+inprogress_poo1:
+  title: "Test ticket"
+  tracker: "progress"
+  external_id: "45264"
+  url: "https://progress.opensuse.org/issues/45264"
+  order_nr: 2
+  status: in_progress
+  assignee: me
+
+inprogress_poo2:
+  title: "Test ticket"
+  tracker: "progress"
+  external_id: "45265"
+  url: "https://progress.opensuse.org/issues/45265"
+  order_nr: 3
+  status: in_progress
+  assignee: me
