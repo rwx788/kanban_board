@@ -4,7 +4,7 @@ import 'jquery-ui/ui/widgets/sortable'
 import Rails from "@rails/ujs";
 
 $(document).on("turbolinks:load", function() {
-    $("#tickets").sortable({
+    $(".tickets").sortable({
         update: function(e, ui) {
             Rails.ajax({
                 url: $(this).data("url"),

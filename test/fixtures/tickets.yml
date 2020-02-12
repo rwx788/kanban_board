@@ -5,7 +5,7 @@
 # below each fixture, per the syntax in the comments below
 #
 open_poo1:
-  title: "Test ticket"
+  title: "Open ticket 1"
   tracker: "progress"
   external_id: "45263"
   url: "https://progress.opensuse.org/issues/45263"
@@ -13,19 +13,37 @@ open_poo1:
   status: open
 #
 inprogress_poo1:
-  title: "Test ticket"
+  title: "WIP ticket 1"
   tracker: "progress"
   external_id: "45264"
   url: "https://progress.opensuse.org/issues/45264"
-  position: 2
+  position: 1
   status: in_progress
   assignee: me
 
 inprogress_poo2:
-  title: "Test ticket"
+  title: "WIP ticket 2"
   tracker: "progress"
   external_id: "45265"
   url: "https://progress.opensuse.org/issues/45265"
+  position: 2
+  status: in_progress
+  assignee: me
+
+inprogress_poo3:
+  title: "WIP ticket 3"
+  tracker: "jira"
+  external_id: "PR-23"
+  url: "https://jira.com/"
   position: 3
   status: in_progress
   assignee: me
+
+done_poo1:
+  title: "Done ticket 1"
+  tracker: "progress"
+  external_id: "4264"
+  url: "https://progress.opensuse.org/issues/4264"
+  position: 1
+  status: done
+  assignee: mew
