@@ -2,7 +2,10 @@
     <div class="row flex-row flex-nowrap">
         <% Status.all.each do |status| %>
             <div class="col-sm-2">
-                <h1 class="mb1"> <%= status.status %> <span class="badge badge-dark"><%= Ticket.where(status: status).all.count() %></span> </h1>
+                <h1 class="mb1">
+                    <%= status.name %>
+                    <span class="badge badge-dark"><%= Ticket.where(status: status).all.count() %></span>
+                </h1>
                 <div id="<%= dom_id(status) %>" class="tickets list-group" data-url="<%= sort_tickets_path %>">
                     <% Ticket.where(status: status).all.each do |ticket| %>
                         <div id="<%= dom_id(ticket) %>" class="ticket">
@@ -16,8 +19,6 @@
                                     <%= ticket.assignee %></p>
                                 <p class="mb-1">Priority:
                                     <%= ticket.priority %></p>
-                                <p class="mb-1">Status:
-                                    <%= ticket.status.status %></p>
                             </a>
                         </div>
                     <% end %>
