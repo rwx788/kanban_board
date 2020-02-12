@@ -11,15 +11,13 @@
 Status.destroy_all
 
 statuses_list = [
-    { status: 'Blocked' },
-    { status: 'Open' },
-    { status: 'In Progress' },
-    { status: 'Review' },
-    { status: 'Done' }
+    { name: 'Blocked' },
+    { name: 'Open' },
+    { name: 'In Progress' },
+    { name: 'Review' },
+    { name: 'Done' }
 ]
 
 statuses_list.each do |status|
-    Status.create!(status: status)
+    Status.create!(name: status)
 end
-
-p "Created #{Status.count} statuses"

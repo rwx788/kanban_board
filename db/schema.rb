@@ -13,8 +13,8 @@
 ActiveRecord::Schema.define(version: 2020_02_10_160825) do
 
   create_table "statuses", force: :cascade do |t|
-    t.string "status"
-    t.index ["status"], name: "index_statuses_on_status"
+    t.string "name"
+    t.index ["name"], name: "index_statuses_on_name"
   end
 
   create_table "tickets", force: :cascade do |t|

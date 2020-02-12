@@ -5,12 +5,12 @@
 # below each fixture, per the syntax in the comments below
 #
 blocked:
-    status: 'Blocked'
+    name: 'Blocked'
 open:
-    status: 'Open'
+    name: 'Open'
 in_progress:
-    status: 'In Progress'
+    name: 'In Progress'
 review:
-    status: 'Review'
+    name: 'Review'
 done:
-    status: 'Done'
+    name: 'Done'
