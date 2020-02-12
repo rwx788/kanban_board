@@ -1,6 +1,12 @@
 # frozen_string_literal: true
 
 class TicketsController < ApplicationController
+    helper_method :get_tickets_per_status
+
+    def get_tickets_per_status(status)
+        Ticket.where(status: status).all
+    end
+
     def index; end
 
     def sort
