@@ -4,6 +4,7 @@
         <span class="badge badge-dark"><%= (tickets_per_status = get_tickets_per_status(status)).count() %></span>
     </h1>
     <div id="<%= dom_id(status) %>" class="tickets list-group" data-url="<%= sort_tickets_path %>">
+        <!-- Render tickets for current status -->
         <%= render :partial => tickets_per_status %>
     </div>
 </div>
