@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2020_02_10_160825) do
     t.string "priority"
     t.string "assignee"
     t.integer "position", null: false
+    t.integer "lock_version"
     t.integer "status_id", null: false
     t.index ["status_id"], name: "index_tickets_on_status_id"
     t.index ["tracker", "external_id"], name: "external_id_index", unique: true
