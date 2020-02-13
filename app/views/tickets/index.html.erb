@@ -1,20 +1,7 @@
 <div id="ticket-lists" class="container-fluid">
     <div class="row flex-row flex-nowrap">
-        <% Status.all.each do |status| %>
-            <div class="col-sm-2">
-                <% tickets_per_status = get_tickets_per_status(status) %>
-                    <h1 class="mb1">
-                        <%= status.name %>
-                        <span class="badge badge-dark"><%= tickets_per_status.count() %></span>
-                    </h1>
-                    <div id="<%= dom_id(status) %>" class="tickets list-group" data-url="<%= sort_tickets_path %>">
-                        <% tickets_per_status.each do |ticket| %>
-                            <%= render :partial => 'ticket', :locals => {:ticket => ticket } %>
-                        <% end %>
-                    </div>
-                </div>
-            <% end %>
-        </div>
+        <%= render :partial => Status.all %>
     </div>
+</div>
 
-    <%= javascript_pack_tag 'tickets', 'data-turbolinks-track': 'reload' %>
+<%= javascript_pack_tag 'tickets', 'data-turbolinks-track': 'reload' %>
