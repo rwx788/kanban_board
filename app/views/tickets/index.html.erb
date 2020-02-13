@@ -9,19 +9,7 @@
                     </h1>
                     <div id="<%= dom_id(status) %>" class="tickets list-group" data-url="<%= sort_tickets_path %>">
                         <% tickets_per_status.each do |ticket| %>
-                            <div id="<%= dom_id(ticket) %>" class="ticket">
-                                <div class="card text-white bg-dark border-primary mb-3" style="max-width: 18rem;">
-                                    <h5 class="card-header"><%= ticket.title %></h5>
-                                    <div class="card-body">
-                                        <h6 class="card-subtitle"><%= ticket.tracker + " : " + ticket.external_id %></h6>
-                                        <p class="mb-1">Assignee:
-                                            <%= ticket.assignee %></p>
-                                        <p class="mb-1">Priority:
-                                            <%= ticket.priority %></p>
-                                        <a href="<%= ticket.url %>" class="btn btn-primary">Go To The Ticket</a>
-                                    </div>
-                                </div>
-                            </div>
+                            <%= render :partial => 'ticket', :locals => {:ticket => ticket } %>
                         <% end %>
                     </div>
                 </div>
