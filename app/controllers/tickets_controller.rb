@@ -12,7 +12,10 @@ class TicketsController < ApplicationController
     def sort
         Ticket.transaction do
             params[:ticket].each.with_index(1) do |id, index|
-                Ticket.where(id: id).update(position: index)
+                Ticket.where(id: id).all.each do |ticket|
+                    ticket.position = index
+                    ticket.save
+                end
             end
         end
 
