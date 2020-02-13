@@ -2,11 +2,16 @@
     <div class="card text-white bg-dark border-primary mb-3" style="max-width: 18rem;">
         <h5 class="card-header"><%= ticket.title %></h5>
         <div class="card-body">
-            <h6 class="card-subtitle"><%= ticket.tracker + " : " + ticket.external_id %></h6>
-            <p class="mb-1">Assignee:
-                <%= ticket.assignee %></p>
-            <p class="mb-1">Priority:
-                <%= ticket.priority %></p>
+            <dl class="row">
+                <dt class="col-sm-5">Tracker:</dt>
+                <dt class="col-sm-6"><%= ticket.tracker %></dt>
+                <dt class="col-sm-5">External ID:</dt>
+                <dd class="col-sm-6"><%= ticket.external_id %></dd>
+                <dt class="col-sm-5">Assignee:</dt>
+                <dd class="col-sm-6"><%= ticket.assignee %></dd>
+                <dt class="col-sm-5">Priority:</dt>
+                <dd class="col-sm-6"><%= ticket.priority %></dd>
+            </dl>
             <a href="<%= ticket.url %>" class="btn btn-primary">Go To The ticket</a>
         </div>
     </div>
