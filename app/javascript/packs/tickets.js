@@ -5,12 +5,15 @@ import 'jquery-ui/ui/widgets/draggable'
 import 'jquery-ui/ui/widgets/droppable'
 import Rails from "@rails/ujs";
 
-
-$(document).on("turbolinks:load", function() {
+function bindSortable(){
     $(".tickets").sortable({
         connectWith: ".tickets",
         tolerance: "pointer",
         items: "> .ticket",
+    });
+    $(".ticket").draggable({
+        connectToSortable: ".tickets",
+        revert: "invalid"
     });
     $(".tickets").on("sortupdate", function(e, ui) {
         var data = {};
@@ -26,11 +29,14 @@ $(document).on("turbolinks:load", function() {
         $.ajax({
             url: $(this).data("url"),
             type: "PATCH",
-            data: data
+            data: data,
+            success: function(responseHtml){
+                bindSortable();
+            }
         });
     });
-    $(".ticket").draggable({
-        connectToSortable: ".tickets",
-        revert: "invalid"
-    });
+}
+
+$(document).on("turbolinks:load", function() {
+    bindSortable();
 });
