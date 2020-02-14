@@ -9,16 +9,25 @@ class TicketsController < ApplicationController
 
     def index; end
 
-    def sort
+    def update_list
+        # get new status parameter in case card was moved to another column
+        status = Status.where(id: params[:status]).first
         Ticket.transaction do
-            params[:ticket].each.with_index(1) do |id, index|
+            params[:tickets].each.with_index(1) do |id, index|
                 Ticket.where(id: id).all.each do |ticket|
-                    ticket.position = index
-                    ticket.save
+                    ticket.with_lock do
+                        ticket.status = status
+                        ticket.position = index
+                        ticket.save
+                    end
                 end
             end
         end
 
-        head :ok
+        respond_to do |format|
+            format.js
+            format.html { render :partial => 'status_badge', locals: { :name => status.name, :count => get_tickets_per_status(status).count() } }
+        end
     end
+
 end
