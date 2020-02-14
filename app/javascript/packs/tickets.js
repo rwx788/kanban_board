@@ -18,19 +18,21 @@ function bindSortable(){
     $(".tickets").on("sortupdate", function(e, ui) {
         var data = {};
         var items = [];
-        // .attributes['data-ticket-id']
+        // Serialize items with ids of the tickets
         $(this).sortable('toArray').forEach(function(item, index) {
             items[index] = $("#" + item)[0].attributes['data-ticket-id'].value;
         });
         data = {
             tickets: items,
+            //add status id of the column item was dropped
             status: $(this).parent()[0].attributes['data-status-id'].value
         };
         $.ajax({
             url: $(this).data("url"),
             type: "PATCH",
             data: data,
-            success: function(responseHtml){
+            success: function(){
+                //re-bind java script handlers
                 bindSortable();
             }
         });
