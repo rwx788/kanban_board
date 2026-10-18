@@ -2017,7 +2017,7 @@ base@^0.11.1:
     mixin-deep "^1.2.0"
     pascalcase "^0.1.1"
 
-baseline-browser-mapping@^2.10.12, baseline-browser-mapping@^2.11.20:
+baseline-browser-mapping@^2.11.20:
   version "2.11.22"
   resolved "https://registry.yarnpkg.com/baseline-browser-mapping/-/baseline-browser-mapping-2.11.22.tgz#d8b612f54517d8b3a31734623779e5ab8c5ff0b9"
   integrity sha512-pWc4w51fBFd7mav43/zKRC+RI6f4yfzQoVlfvE8dECePyfkn1bzLp01Fj0QACcyCZyFhiEMyD2qScfKRWgWibA==
@@ -2115,9 +2115,9 @@ bootstrap@^5.0.0:
   integrity sha512-tmhPET9B9qCl8dCofvHeiIhi49iBt0EehmIsziZib65k1erBW1rHhj2s/2JsuQh5Pq+xz2E9bEbzp9B7xHG+VA==
 
 brace-expansion@^1.1.7:
-  version "1.1.18"
-  resolved "https://registry.yarnpkg.com/brace-expansion/-/brace-expansion-1.1.18.tgz#3ce74d89885136be1535341f8c3d4425c29a5cab"
-  integrity sha512-Edep/X9fGqVNmzKBVsDYIOtD+z1tuezV70LBjdCst9Tqu76lsnvRiZ6oTic1n+/BIwX6QDGAO94PN4N2SADvtw==
+  version "1.1.21"
+  resolved "https://registry.yarnpkg.com/brace-expansion/-/brace-expansion-1.1.21.tgz#edf4fab5c64d051aea5a8def49aba1c7522279f3"
+  integrity sha512-9zeA+KLZNNzglF2TPKRQEDyx6Yby7daAkuy8MiPzpXPsYDWi/DRM8jmwUDxokQjYqBpv5DgPiwD4h4ZZSy1Ujw==
   dependencies:
     balanced-match "^1.0.0"
     concat-map "0.0.1"
